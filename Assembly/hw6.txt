@@ -1,0 +1,52 @@
+﻿.data
+    array: .word 3, 2, 1, 10, 3, 8, 8, 2
+    array_size: .word 8
+    duplicates_msg: .asciiz "The duplicates are: "
+
+.text
+.globl main
+.ent main
+
+main:
+        la $t0, array
+        lw $t1, array_size
+        li $t4, 0
+        li $v0, 4
+        la $a0, duplicates_msg
+        syscall
+
+outer_loop:
+        beq $t4, $t1, exit_program
+
+        lw $t2, ($t0)
+        li $t3, 0
+
+inner_loop:
+        beq $t3, $t1, next_outer
+
+        lw $t5, ($t0 + $t3*4)
+        bne $t2, $t5, not_duplicate
+
+        # Print duplicate value
+        li $v0, 1
+        move $a0, $t2
+        syscall
+
+        # Print space
+        li $v0, 4
+        la $a0, " "
+        syscall
+
+not_duplicate:
+        addi $t3, $t3, 1
+        j inner_loop
+
+next_outer:
+        addi $t4, $t4, 1
+        j outer_loop
+
+exit_program:
+        li $v0, 10
+        syscall
+
+.end main
