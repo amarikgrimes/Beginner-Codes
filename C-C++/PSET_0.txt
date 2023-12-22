@@ -1,0 +1,106 @@
+=====================================================================
+Amari Grimes
+ITSE 1420.251
+PSET: 2           
+=====================================================================
+OUTPUT:
+=====================================================================
+PGM #1  
+---------------------------------------------------------------------Meal Cost: $88.67
+Tax Amount: $5.99
+Tip Amount: $19.33
+Total Bill: $114.99
+---------------------------------------------------------------------
+PGM #2
+---------------------------------------------------------------------
+Total Annual Pay: $57200
+---------------------------------------------------------------------
+PGM #3
+---------------------------------------------------------------------
+Amount paid for stock: $65740.00
+Commission paid on purchase: $1314.80
+Amount stock sold for: $33920.00
+Commission paid on sale: $678.40
+Profit/Loss: -$1.20
+=====================================================================
+SOURCE CODE:
+=====================================================================
+PGM #1  
+----------------------------------------------------------------------#include <stdio.h>
+
+int main() {
+
+//INPUT:
+  //float meal_cost = 88.67;
+    float tax_rate = 6.75 / 100;
+    float tip_rate = 20 / 100;
+
+//PROCESSING:
+  //float tax_amount = meal_cost * tax_rate;
+    float total_with_tax = meal_cost + tax_amount;
+    float tip_amount = total_with_tax * tip_rate;
+    float total_bill = total_with_tax + tip_amount;
+
+//OUTPUT:
+  //printf("Meal Cost: $%.2f\n", meal_cost);
+    printf("Tax Amount: $%.2f\n", tax_amount);
+    printf("Tip Amount: $%.2f\n", tip_amount);
+    printf("Total Bill: $%.2f\n", total_bill);
+
+    return 0;
+}
+---------------------------------------------------------------------
+PGM #2
+----------------------------------------------------------------------#include <stdio.h>
+
+int main() {
+
+//INPUT:
+  //int payAmount = 2200;
+    int payPeriods = 26;
+    int annualPay;
+//PROCESSING: 
+  //annualPay = payAmount * payPeriods;
+//OUTPUT:
+  //printf("annualPay: %d\n", annualPay);
+
+return 0;
+}
+---------------------------------------------------------------------
+PGM #3
+---------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+
+//INPUT:
+  //int shares_purchased = 2000;
+    float purchase_price_per_share = 32.87;
+    float purchase_commission_rate = 0.02;
+
+    int shares_sold = 1000;
+    float sale_price_per_share = 33.92;
+    float sale_commission_rate = 0.02;
+
+
+//PROCESSING:
+  //float purchase_amount = shares_purchased * purchase_price_per_share;
+    float purchase_commission = purchase_amount * purchase_commission_rate;
+
+    float sale_amount = shares_sold * sale_price_per_share;
+    float sale_commission = sale_amount * sale_commission_rate;
+
+    float profit = sale_amount - sale_commission - (purchase_amount + purchase_commission);
+
+//OUTPUT:
+  //printf("Amount paid for the stock: $%.2f\n", purchase_amount);
+    printf("Commission paid on the purchase: $%.2f\n", purchase_commission);
+    printf("Amount the stock sold for: $%.2f\n", sale_amount);
+    printf("Commission paid on the sale: $%.2f\n", sale_commission);
+    printf("Profit (or loss): $%.2f\n", profit);
+
+
+    return 0;
+}
+=====================================================================
+=====================================================================
