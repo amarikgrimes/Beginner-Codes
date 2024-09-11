@@ -1,0 +1,59 @@
+body {
+    font-family: monospace;
+}
+
+ul {
+    font-family: helvetica;
+}
+img {
+    width: 200px
+}
+
+li {
+    list-style: circle;
+}
+.list {
+    list-style: square;
+}
+:root {
+    --pink: #ee8cc2;
+    --white: #ffffff;
+    --black: #000000;
+    --purple: #b385e0;
+}
+* {
+    color: var(--fontcolor);
+    font-family: helvetica;
+}
+body {
+    background: var(--bg);
+}
+.light-theme {
+    --bg: var(--white);
+    --fontcolor:var(--pink);
+    --btnbg: var(--purple);
+    --btnfontcolor: var(--white);
+
+}
+.dark-theme {
+    --bg: var(--pink); 
+    --fontcolor: var(--white);
+    --btnbg: var(--white);
+    --btnfontcolor: var(--purple);
+}
+.btn {
+    color: var(--btnfontcolor);
+    background-color: var(--btnbg);
+}
+.btn {
+    position: absolute;
+    top: 20px;
+    left: 300px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    color: var(--btnfontcolor);
+    background-color: var(--btnbg);
+}
+.btn:focus { outline-style: none; }
